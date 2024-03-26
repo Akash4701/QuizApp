@@ -1,0 +1,20 @@
+*{
+  margin:0;
+  padding: 0;
+}
+
+.quiz {
+  background-image: url('https://steemitimages.com/640x0/https://cdn.steemitimages.com/DQmb47hWqq4WdnTa8Ddn9ApcNTDgvadnFTijHhtbvup6JB2/imagen.png'); 
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  background-repeat: no-repeat;
+}
+.container index{
+  margin: auto;
+  font-size: 20px;
+}
