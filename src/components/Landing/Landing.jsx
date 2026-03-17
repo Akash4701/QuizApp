@@ -1,6 +1,6 @@
-import "./landing.css"
 import Quiz from "../Quiz/Quiz"
 import { useState } from "react";
+import "./Landing.css";
 
 const Landing = () => {
   // difficulty level
@@ -43,19 +43,19 @@ const Landing = () => {
   const [start, setStart] = useState(false);
 
   return (
-    <div className="landing">
+    <div className="landing min-h-screen flex items-center justify-center bg-cover bg-center">
 
       {start ? (
         <Quiz diff={diff} cat={cat} num={num} />
       ) : (
-        <>
-          <h1>Welcome to the Quiz App</h1>
-          <p>Test your knowledge with our fun and interactive quizzes!</p>
+        <div className="flex flex-col justify-center align-center text-center gap-4 bg-white/90 backdrop-blur-md w-200 h-100 p-8 rounded-xl shadow-2xl">
+          <h1 className="font-extrabold text-2xl text-zinc-950">Welcome to the Quiz App</h1>
+          <p className="font-bold text-xl text-zinc-950">Test your knowledge with our fun and interactive quizzes!</p>
 
           {/* Difficulty Dropdown */}
-          <div className="dropdown">
-            <label>Select Difficulty:</label>
-            <select value={diff} onChange={(e) => setDiff(e.target.value)}>
+          <div className="dropdown mt-4 mb-4">
+            <label className="block mb-2 font-bold">Select Difficulty:</label>
+            <select value={diff} onChange={(e) => setDiff(e.target.value)} className="px-3 py-2 border border-gray-300 rounded">
               {diffs.map((d, i) => (
                 <option key={i} value={d}>
                   {d}
@@ -65,9 +65,9 @@ const Landing = () => {
           </div>
 
           {/* Category Dropdown */}
-          <div className="dropdown">
-            <label>Select Category:</label>
-            <select value={cat} onChange={(e) => setCat(Number(e.target.value))}>
+          <div className="dropdown mt-4 mb-4">
+            <label className="block mb-2 font-bold">Select Category:</label>
+            <select value={cat} onChange={(e) => setCat(Number(e.target.value))} className="px-3 py-2 border rounded">
               {cats.map((c) => (
                 <option key={c.id} value={c.id}>
                   {c.name}
@@ -88,10 +88,10 @@ const Landing = () => {
             />
           </div>
 
-          <button className="start-btn" onClick={() => setStart(true)}>
-            Start Quiz
+          <button className="start-btn flex flex-row justify-center align-center p-4" onClick={() => setStart(true)}>
+            <p className="p-4 w-30 h-8 bg-amber-950 text-amber-50 rounded-md">Start Quiz</p>
           </button>
-        </>
+        </div>
       )}
 
     </div>
